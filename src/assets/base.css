@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'MPLUS1p';
+  src: url('@/assets/font/MPLUS1p-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Aboreto';
+  src: url('@/assets/font/Aboreto-Regular.ttf') format('truetype');
+}
+
+body {
+  background-image: url('@/assets/img/background.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  color: #f5f5f5;
+  font-size: 16px;
+  /* background-position: center; */
+  /* width: 100%; */
+  /* height: auto; */
+  /* text-align: center; */
+}

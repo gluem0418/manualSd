@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+{% block body %}
+
+    <main>
+
+        <div class="txtMainTop">
+            <h2>AIで画像の中に存在するモノを判別します</h2>
+        </div>
+
+        <div class="sec1">
+            <div class="sec1Title">
+                <h2>「Load」を押してモデルをロードしてください。</h2>
+                <hr class="titleLine1">
+            </div>
+
+            <form id="ajax_load" name="load">
+
+                <button name="btn" id="btn_load" type="submit" class="btn1">Load</button>
+                <progress id="time_load" max="30" value="0"></progress>
+
+                <div id="result_load" class="bg-dark text-white"></div>
+
+            </form>
+
+        </div>
+
+        <div class="sec1">
+            <div class="sec1Title">
+                <h2>使用する画像を選択します。モデルのロード中でも選択できます。</h2>
+                <hr class="titleLine1">
+            </div>
+
+            <div class="textSelect1">① インターネット上の画像を使用する際は下の検索ボックスから検索し、使用する画像をクリックしてください。</div>
+
+            <form name="search" class="formSeach">
+                <input id="in_search" name="key" type="text" placeholder="画像を検索">
+                <button name="btn" type="submit" class="btn1">Seach</button>
+            </form>
+
+            <div id="result"></div>
+
+            <div class="textSelect1">② ローカルファイルの画像を使用する際は「ファイルを選択」を押して画像を選択してください。</div>
+
+            <input type='file' id="img_select" class="selectBtn" name="img_select" accept=".png,.jpeg,.jpg"
+                onchange="previewImage(this);">
+
+        </div>
+
+        <div class="sec1">
+            <div class="sec1Title">
+                <h2>「Detection」を押すと、新しいウィンドウに結果を表示します。</h2>
+                <hr class="titleLine1">
+            </div>
+
+            <form id="ajax_dect" action="/detection" method="post" target="_blank" enctype="multipart/form-data">
+
+                <div class="formDect">
+                    <button name="btn" id="btn_dect" type="submit" class="btn1">Detection</button>
+                    <!--<span class="cmtDect1">画像の解析まで数十秒おまちください</span>-->
+                </div>
+                <span class="cmtDect2">解析する画像</span>
+                <input type='hidden' id="img_url" name="img_url">
+                <!-- URL: <input type='text' id="img_url" name="img_url"> -->
+            </form>
+
+            <img id="img_obj" name="img_obj">
+
+        </div>
+
+    </main>
+
+    <script>
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = jQuery.trim(cookies[i]);
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
+        var csrftoken = getCookie('csrftoken');
+
+        function csrfSafeMethod(method) {
+            // these HTTP methods do not require CSRF protection
+            return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+        }
+
+        $.ajaxSetup({
+            beforeSend: function (xhr, settings) {
+                if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                }
+            }
+        });
+
+        $('#ajax_load').submit(function(event) {
+            event.preventDefault();
+            $('#result_load').text('モデルをロード中です。しばらくお待ちください。');
+            // Ajax通信を開始
+            $.ajax({
+                url: "/load",
+                method: "POST",
+                dataType: 'text',
+                data:{ model_name : $('#model_name option:selected').text()}
+            })
+            .done(function(data) {
+                // 通信成功時の処理を記述
+                $('#result_load').text(data);
+                alert("ロード完了");
+            })
+            .fail(function() {
+                // 通信失敗時の処理を記述
+                $('#result_load').text('ロード失敗');
+                alert("ロード失敗");
+            });
+        });
+
+        // ------------------------------------------------------------
+        // 画像選択時の処理
+        // ------------------------------------------------------------
+        function previewImage(obj)
+        {
+            var fileReader = new FileReader();
+            fileReader.onload = (function() {
+                document.getElementById('img_obj').src = fileReader.result;
+                document.getElementById('img_url').value = fileReader.result;
+            });
+            fileReader.readAsDataURL(obj.files[0]);
+        }
+
+    </script>
+    <script src="static/js/detection.js"></script>
+
+{% endblock %}

@@ -1,0 +1,180 @@
+body {
+    font-family: "M PLUS 1p";
+    background-image: url("/static/img/backLightBlue.jpg");
+    background-attachment: fixed;
+    text-align: center;
+    font-size: 16px;
+    color: #f5f5f5;
+}
+
+.title {
+    font-family: "Oswald";
+    color: #2F190C;
+    font-size: 64px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+header {
+    margin: 20px auto;
+}
+
+.txtMainTop {
+    color: #2F190C;
+    margin-bottom: 50px;
+}
+
+.sec1 {
+    margin: 0 auto 50px;
+    width: 94%;
+    background-color: rgba(47, 25, 12, 0.8);
+    border-radius: 20px;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    font-weight:400;
+}
+
+.sec1Title {
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+hr {
+    margin-top: -10px;
+    height: 2px;
+    background: linear-gradient(to right, #32DBDB, #F5F5F5);
+    border: none;
+}
+
+.modelLoad {
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    margin-bottom: 20px;
+}
+
+#model_name {
+    font-family: "Oswald";
+    font-size: 16px;
+    height: 36px;
+}
+
+.btn1 {
+    background-color: #32DBDB;
+    border-radius: 10px;
+    font-family: "Oswald";
+    font-size: 24px;
+    color: #2F190C;
+    padding: 2px 30px;
+    width: auto;
+    box-shadow: 2px 2px rgba(245, 245, 245, 0.3);
+}
+
+.btn1:hover {
+    background-color: #18c1c1;
+}
+
+#btn_load {
+    margin-left: 20px;
+}
+
+#time_load {
+    width: 300px;
+    height: 30px;
+    margin-left: 20px;
+}
+
+#result_load {
+    margin-top:20px;
+}
+
+.textSelect1 {
+    margin-bottom: 20px;
+}
+
+.formSeach {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    height: 36px;
+    width: 400px;
+    border: none;
+    outline: none;
+    /* padding: 10px 0; */
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 1px solid #aaa;
+}
+
+input[type="file"] {
+    font-size:16px;
+}
+
+input[type="submit"]:hover {
+    color: #fff;
+    background-color: #aaa;
+    cursor: pointer;
+}
+
+.selectBtn::file-selector-button {
+    background-color: #32DBDB;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #2F190C;
+    padding: 4px 20px;
+    width: auto;
+    box-shadow: 2px 2px rgba(245, 245, 245, 0.3);
+}
+
+.formDect {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.cmtDect1 {
+    margin-left:2%;
+}
+
+.txtResult {
+    color: #2F190C;
+    margin-bottom:10px;
+}
+
+#in_search {
+    margin-right: 20px;
+}
+
+#result {
+    width: auto;
+    margin-bottom: 40px;
+}
+
+#result img:hover {
+    opacity: 0.5;
+}
+
+/*#img_select {*/
+/*    margin: 0px 20px;*/
+/*}*/
+
+#img_obj {
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+    /*padding: 10px;*/
+}
+
+#dect_img {
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+    /*padding: 10px;*/
+}
