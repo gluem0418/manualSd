@@ -1,28 +1,20 @@
 <script setup lang="ts">
 import TitleFlame from '@/components/TitleFlame.vue'
-// import TheWelcome from './components/TheWelcome.vue'
+import InfoBase from '@/components/InfoBase.vue'
+
 </script>
 
 <template>
-  <!-- <header> -->
   <TitleFlame class="title" :inside="'Manual'" />
-  <!-- </header> -->
 
-  <main>
-    <!-- <TheWelcome /> -->
-  </main>
+  <InfoBase class="base" />
+
+
 </template>
 
 <style scoped>
-header {
-  margin: 20px auto;
-  width: 100%;
+.title {
+  margin: 50px auto;
 }
 
-.title {
-  margin: auto;
-  display: block;
-  /* margin: 50px auto; */
-  /* width: 30%; */
-}
 </style>

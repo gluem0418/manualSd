@@ -15,7 +15,7 @@ const props = defineProps({
   background-image: url('@/assets/img/flame1.png');
   background-size: 100% 100%;
   text-align: center;
-  padding: 3.8vh 2vw;
+  padding: 20px;
   font-family: 'Aboreto';
   color: #F5F5F5;
   font-size: 48px;
