@@ -27,65 +27,65 @@ const iconTable = [
 <template>
   <div class="base">
 
-    <div class="contents">
+    <!-- <div class="contents"> -->
 
-      <div class="title">拠点での機能</div>
+    <div class="title">拠点での機能</div>
 
-      <img class="imgBase" :src="imgBase" alt="Base" />
+    <img class="imgMain" :src="imgBase" alt="Base" />
 
-      <div class="mainSec">
+    <div class="mainSec">
 
-        <!-- パーティ -->
-        <div class="flexItem1">
-          <img class="imgIcon" :src="iconParty" alt="Party" />
-          <div>
-            <div class="flexItem2">
-              <div class="midTitle1">パーティ</div>
-              <div class="text">パーティメンバーの状態確認、装備の変更が可能です。</div>
-            </div>
+      <!-- パーティ -->
+      <div class="flexItem1">
+        <img class="imgIcon" :src="iconParty" alt="Party" />
+        <div>
+          <div class="flexItem2">
+            <div class="midTitle1">パーティ</div>
+            <div class="text">パーティメンバーの状態確認、装備の変更が可能です。</div>
           </div>
         </div>
+      </div>
 
-        <!-- ギルド -->
-        <div class="flexItem1">
-          <img class="imgIcon" :src="iconGuild" alt="Guild" />
-          <div>
+      <!-- ギルド -->
+      <div class="flexItem1">
+        <img class="imgIcon" :src="iconGuild" alt="Guild" />
+        <div>
 
-            <div class="flexItem2">
-              <div class="midTitle1">ギルド</div>
-              <div class="text">パーティメンバーの状態確認、装備の変更が可能です。</div>
-            </div>
-
-            <div class="flexItem2">
-              <div class="midTitle2">Add a Member</div>
-              <div class="text">指定したメンバーをパーティに参加させます。（メンバーが4人の場合は参加出来ません。）</div>
-            </div>
-
-            <div class="flexItem2">
-              <div class="midTitle2">Remove Member</div>
-              <div class="text">指定したメンバーをパーティから解除します。（リーダーは解除出来ません。）</div>
-            </div>
-
+          <div class="flexItem2">
+            <div class="midTitle1">ギルド</div>
+            <div class="text">パーティメンバーの状態確認、装備の変更が可能です。</div>
           </div>
-        </div>
 
-        <!-- ダンジョン -->
-        <div class="flexItem1">
-          <img class="imgIcon" :src="iconDungeon1" alt="Forest" />
-          <div>
-            <div class="flexItem2">
-              <div class="midTitle1">ダンジョン</div>
-              <div class="text">入るたびに違った構造になるダンジョンです。</div>
-            </div>
-            <div class="iconList">
-              <div v-for="(icon, index) in iconTable" :key="index">
-                <img :src="icon" alt="Dungeon" class="iconMini" />
-              </div>
+          <div class="flexItem2">
+            <div class="midTitle2">Add a Member</div>
+            <div class="text">指定したメンバーをパーティに参加させます。（メンバーが4人の場合は参加出来ません。）</div>
+          </div>
+
+          <div class="flexItem2">
+            <div class="midTitle2">Remove Member</div>
+            <div class="text">指定したメンバーをパーティから解除します。（リーダーは解除出来ません。）</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ダンジョン -->
+      <div class="flexItem1">
+        <img class="imgIcon" :src="iconDungeon1" alt="Forest" />
+        <div>
+          <div class="flexItem2">
+            <div class="midTitle1">ダンジョン</div>
+            <div class="text">入るたびに違った構造になるダンジョンです。</div>
+          </div>
+          <div class="iconList">
+            <div v-for="(icon, index) in iconTable" :key="index">
+              <img :src="icon" alt="Dungeon" class="iconMini" />
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- </div> -->
   </div>
 </template>
 
@@ -94,31 +94,41 @@ const iconTable = [
   position: relative;
   margin: 0 auto;
   width: 90%;
-  background: #40424C;
-  border-radius: 30px;
-  border: 4px ridge #F5F5F5;
-  padding: 50px 0;
-
-}
-
-
-.contents {
-  width: 90%;
-  margin: 0 auto;
   text-align: center;
 }
 
-
 .title {
-  margin-bottom: 50px;
   font-size: 36px;
+  display: flex;
+  align-items: center;
+  color: #DCEAF0;
 }
 
-.imgBase {
-  margin: 0 auto 50px;
+
+.title:before,
+.title:after {
+  content: "";
+  flex-grow: 1;
+  height: 2px;
+}
+
+.title:before {
+  margin-right: 30px;
+  background: linear-gradient(to right, rgba(63, 66, 71, 0.3), #DCEAF0);
+}
+
+.title:after {
+  margin-left: 30px;
+  background: linear-gradient(to left, rgba(63, 66, 71, 0.3), #DCEAF0);
+}
+
+.imgMain {
+  margin: 40px auto;
   width: 90%;
+  border: ridge 3px #DCEAF0;
   border-radius: 20px;
 }
+
 .mainSec {
   margin: 0 auto;
   width: fit-content;
@@ -127,10 +137,13 @@ const iconTable = [
 .flexItem1 {
   display: flex;
   align-items: center;
+  /* align-content:center; */
   margin-bottom: 50px;
-  gap: 3%;
   text-align: left;
-  /* border: 1px dotted #F5F5F5; */
+}
+
+.imgIcon {
+  margin-right:3%;
 }
 
 .flexItem2 {
@@ -141,20 +154,22 @@ const iconTable = [
 
 
 .midTitle1 {
-  width: 170px;
-  font-size: 20px;
+  width: 180px;
+  font-size: 24px;
+  margin-top:-5px;
   margin-bottom: 20px;
-  white-space: nowrap;
+  /* white-space: nowrap; */
 }
 
 .midTitle2 {
-  width: 170px;
-  font-size: 18px;
-  white-space: nowrap;
-  /* border: 1px dotted #cfc9d7; */
+  width: 180px;
+  font-size: 20px;
+  margin-top:-3px;
+  /* white-space: nowrap; */
 }
 
 .text {
+  white-space: nowrap;
   /* border: 1px dotted #cfc9d7; */
 }
 
