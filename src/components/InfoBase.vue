@@ -53,7 +53,7 @@ const iconTable = [
 
           <div class="flexItem2">
             <div class="midTitle1">ギルド</div>
-            <div class="text">パーティメンバーの状態確認、装備の変更が可能です。</div>
+            <div class="text">パーティメンバーの入れ替えが可能です。</div>
           </div>
 
           <div class="flexItem2">

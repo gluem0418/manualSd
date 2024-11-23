@@ -2,7 +2,8 @@
 
 
 body {
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('@/assets/img/background.jpg');
+  /* background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('@/assets/img/background.jpg'); */
+  background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('@/assets/img/background.jpg');
   background-attachment: fixed;
   background-size: cover;
   font-family: 'MPLUS1p';

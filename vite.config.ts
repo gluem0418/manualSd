@@ -7,7 +7,7 @@ export default defineConfig({
   base: '/manualSd/', //追加
   plugins: [vue()],
   build: {
-    // outDir: './docs',
+    outDir: './docs',
     sourcemap: true,
   },
   resolve: {

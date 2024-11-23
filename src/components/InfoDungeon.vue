@@ -24,56 +24,60 @@ import iconBag from "@/assets/icon/bag.png"
       <div class="secItem1">
         <div class="midTitle2">キーボードでの操作</div>
         <table>
-          <tr>
-            <td>↑</td>
-            <td>前に進む</td>
-          </tr>
-          <tr>
-            <td>D</td>
-            <td>右を向く</td>
-          </tr>
-          <tr>
-            <td>A</td>
-            <td>左を向く</td>
-          </tr>
-          <tr>
-            <td>↓</td>
-            <td>後ろに下がる</td>
-          </tr>
-          <tr>
-            <td>→</td>
-            <td>右に水平移動</td>
-          </tr>
-          <tr>
-            <td>←</td>
-            <td>左に水平移動</td>
-          </tr>
+          <tbody>
+            <tr>
+              <td>↑</td>
+              <td>前に進む</td>
+            </tr>
+            <tr>
+              <td>D</td>
+              <td>右を向く</td>
+            </tr>
+            <tr>
+              <td>A</td>
+              <td>左を向く</td>
+            </tr>
+            <tr>
+              <td>↓</td>
+              <td>後ろに下がる</td>
+            </tr>
+            <tr>
+              <td>→</td>
+              <td>右に水平移動</td>
+            </tr>
+            <tr>
+              <td>←</td>
+              <td>左に水平移動</td>
+            </tr>
+          </tbody>
         </table>
       </div>
 
       <div class="secItem1">
         <div class="midTitle2">クリック操作</div>
         <table>
-          <tr>
-            <td>画面の中心</td>
-            <td>前に進む</td>
-          </tr>
-          <tr>
-            <td>画面の右側</td>
-            <td>右を向く</td>
-          </tr>
-          <tr>
-            <td>画面の左側</td>
-            <td>左を向く</td>
-          </tr>
-          <tr>
-            <td>扉・宝箱</td>
-            <td>開ける</td>
-          </tr>
-          <tr>
-            <td>石像</td>
-            <td>調べる</td>
-          </tr>
+          <tbody>
+            <tr>
+              <td>画面の中心</td>
+              <td>前に進む</td>
+            </tr>
+            <tr>
+              <td>画面の右側</td>
+              <td>右を向く</td>
+            </tr>
+            <tr>
+              <td>画面の左側</td>
+              <td>左を向く</td>
+            </tr>
+            <tr>
+              <td>扉・宝箱</td>
+              <td>開ける</td>
+            </tr>
+            <tr>
+              <td>石像</td>
+              <td>調べる</td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>
@@ -144,7 +148,7 @@ import iconBag from "@/assets/icon/bag.png"
 }
 
 .flexItem1 {
-  margin-bottom:30px;
+  margin-bottom: 30px;
   display: flex;
   justify-content: center;
   gap: 5%;
@@ -176,8 +180,7 @@ table tr td:nth-child(even) {
 .flexItem2 {
   display: flex;
   justify-content: center;
-  align-items:center;
+  align-items: center;
   gap: 5%;
 }
-
 </style>
