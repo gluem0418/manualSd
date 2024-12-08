@@ -124,57 +124,83 @@ const iconTable = [
 
 .imgMain {
   margin: 40px auto;
-  width: 90%;
+  width: 100%;
   border: ridge 3px #DCEAF0;
   border-radius: 20px;
 }
 
 .mainSec {
-  margin: 0 auto;
+  /* margin: 0 auto; */
   width: fit-content;
+  margin-inline: auto
 }
 
 .flexItem1 {
   display: flex;
-  align-items: center;
-  /* align-content:center; */
+  /* align-items: center; */
+  align-items: top;
   margin-bottom: 50px;
   text-align: left;
 }
 
 .imgIcon {
-  margin-right:3%;
+  margin-right: 3%;
+  width: 120px;
+  height: 120px;
 }
 
 .flexItem2 {
   display: flex;
 }
 
-@media screen and (max-width: 800px) {}
+@media screen and (max-width: 1000px) {
+  .flexItem2 {
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+}
 
 
 .midTitle1 {
   width: 180px;
   font-size: 24px;
-  margin-top:-5px;
-  margin-bottom: 20px;
   /* white-space: nowrap; */
 }
+
+@media screen and (min-width: 1000px) {
+  .midTitle1 {
+    margin-top: -5px;
+    margin-bottom: 20px;
+  }
+
+  .text {
+    white-space: nowrap;
+  }
+}
+
 
 .midTitle2 {
   width: 180px;
   font-size: 20px;
-  margin-top:-3px;
+  margin-top: -3px;
   /* white-space: nowrap; */
-}
-
-.text {
-  white-space: nowrap;
-  /* border: 1px dotted #cfc9d7; */
 }
 
 .iconList {
   display: flex;
   gap: 3%;
+}
+
+@media screen and (max-width: 800px) {
+  .iconList {
+    flex-wrap: wrap;
+  }
+
+  .imgIcon {
+    width: 80px;
+    height: 80px;
+  }
+
+
 }
 </style>

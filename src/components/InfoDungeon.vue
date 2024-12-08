@@ -132,7 +132,7 @@ import iconBag from "@/assets/icon/bag.png"
 
 .imgMain {
   margin: 40px auto;
-  width: 90%;
+  width: 100%;
   border: ridge 3px #EBA921;
   border-radius: 20px;
 }
@@ -148,15 +148,25 @@ import iconBag from "@/assets/icon/bag.png"
 }
 
 .flexItem1 {
-  margin-bottom: 30px;
   display: flex;
   justify-content: center;
-  gap: 5%;
+  gap: 5vw;
+  margin: 0 auto 30px;
+  width: fit-content;
 }
+
+@media screen and (max-width: 700px) {
+  .flexItem1 {
+    flex-direction: column;
+    gap:16px;
+  }
+}
+
 
 table {
   margin: 14px 0;
   border-collapse: collapse;
+  white-space: nowrap;
 }
 
 table td {
@@ -165,16 +175,11 @@ table td {
 
 table tr td:nth-child(odd) {
   background: #3F4247;
-  padding: 8px 50px
+  padding: 8px 40px
 }
 
 table tr td:nth-child(even) {
   padding: 8px 50px
-}
-
-.midTitle2 {
-  font-size: 20px;
-  text-align: left;
 }
 
 .flexItem2 {
@@ -182,5 +187,18 @@ table tr td:nth-child(even) {
   justify-content: center;
   align-items: center;
   gap: 5%;
+}
+
+.imgIcon {
+  width: 100%;
+}
+
+.midTitle2 {
+  font-size: 20px;
+  text-align: left;
+}
+
+.text {
+  text-align: left;
 }
 </style>

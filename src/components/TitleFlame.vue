@@ -20,4 +20,14 @@ const props = defineProps({
   color: #F5F5F5;
   font-size: 48px;
 }
+
+@media screen and (max-width: 600px) {
+  .flame {
+    width: 300px;
+    font-size: 40px;
+    padding: 16px;
+  }
+}
+
+
 </style>

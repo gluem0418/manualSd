@@ -63,7 +63,7 @@ import iconOrb2 from "@/assets/icon/SkillOrb.png"
 
 .imgMain {
   margin: 40px auto;
-  width: 90%;
+  width: 100%;
   border: ridge 3px #DD5949;
   border-radius: 20px;
 }
@@ -77,18 +77,28 @@ import iconOrb2 from "@/assets/icon/SkillOrb.png"
   margin-bottom: 30px;
   display: flex;
   justify-content: center;
-  gap: 5%;
+  gap: 3vw;
 }
+
+@media screen and (max-width: 700px) {
+  .flexItem1 {
+    flex-direction: column;
+  }
+
+  .imgIcon {
+    width: 80px;
+  }
+}
+
 
 .secItem1 {
   display: flex;
-  align-items:center;
+  align-items: center;
   gap: 20px;
 }
 
 .text {
-  text-align:left;
-  min-width:100px;
-  /* max-width:500px; */
+  text-align: left;
+  min-width: 100px;
 }
 </style>
